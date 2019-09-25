@@ -73,6 +73,8 @@ const main = async () => {
   fs.writeFileSync(outDir + 'index.html', html)
 
   await fetchHelpData()
+
+  console.log('done')
 }
 
 main()
