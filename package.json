@@ -1,0 +1,23 @@
+{
+  "name": "helpfeel-download",
+  "version": "0.0.1",
+  "description": "Download helpfeel program & data for on-premise",
+  "main": "",
+  "author": "Nota Inc.",
+  "repository": "https://github.com/nota/scrapbox-site-converter",
+  "private": true,
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "start": "npm run crawl && npm run convert",
+    "crawl": "babel-node --max-old-space-size=4048 src/crawl.js",
+    "convert": "babel-node --max-old-space-size=4048 src/convert.js",
+    "test": "standard"
+  },
+  "dependencies": {
+    "jsdom": "^15.1.1",
+    "node-fetch": "^2.6.0"
+  }
+}
