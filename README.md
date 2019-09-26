@@ -10,7 +10,7 @@ Run this command:
 
 `PROJECT=xxxx node index.js`
 
-then, all resouces will be saved at `out/` directory.
+then, all resources will be saved at `out/` directory.
 
 To confirm it, put the files in any local server.
 For example, you could do like this:
