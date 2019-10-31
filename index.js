@@ -30,12 +30,12 @@ const fetchAndSave = async (resouceUrl) => {
 }
 
 const fetchHelpData = async () => {
-  const url = `https://helpfeelapp.com/helpdata/${projectName}.json`
+  const url = `https://helpfeel.com/${projectName}/data/helpdata.json`
   await fetchAndSave(url)
 }
 
 const main = async () => {
-  const url = `https://helpfeelapp.com/${projectName}/`
+  const url = `http://helpfeel.com/${projectName}/`
   console.log('fetching...', url)
   const res = await fetch(url)
   const html = await res.text()
@@ -59,7 +59,7 @@ const main = async () => {
   for (const resouceUrl of resourceUrls) {
     const { text } = await fetchAndSave(resouceUrl)
     // SVG icons in the script
-    const svgPaths = text.match(/\/img\/[^\"\)]*?\.svg/g)
+    const svgPaths = text.match(/img\/[^\"\)]*?\.svg/g)
     if (svgPaths) {
       svgImages.push(...svgPaths)
     }
@@ -70,7 +70,7 @@ const main = async () => {
     await fetchAndSave(absPath)
   }
 
-  fs.writeFileSync(outDir + 'index.html', html)
+  fs.writeFileSync(outDir + `${projectName}/index.html`, html)
 
   await fetchHelpData()
 
